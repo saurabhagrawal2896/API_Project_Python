@@ -9,8 +9,8 @@ from datetime import datetime
 def setup_database():
     # setting up database based on rates.sql
     queriesPath = "rate.sql"
-    myCursor.execute("create database xeneta_rates")
-    myCursor.execute("use xeneta_rates")
+    myCursor.execute("create database rates")
+    myCursor.execute("use rates")
     print("setting up the database, this may take few minutes")
     with open(queriesPath, 'r') as rateFile:
         sqlScript = rateFile.read()
@@ -112,7 +112,7 @@ except:
 
 try:
     # using database if exists
-    myCursor.execute("use xeneta_rates")
+    myCursor.execute("use rates")
 except:
     # setting up database if not exists
     setup_database()
